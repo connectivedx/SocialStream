@@ -1,0 +1,22 @@
+﻿@model SocialStream.Models.StreamModel
+@{
+	ViewBag.Title = "Stream";
+}
+
+<section class="jumbotron">
+	<h1>Stream</h1>
+	<p class="lead">Here's an example of how it works (sometimes)</p>
+</section>
+
+@for (int i = 0; i < 10; i++)
+{
+	<section class="row">
+		<section class="col-md-6">
+			<img src="@Model.FacebookPictures[i].Url" class="image"/>
+		</section>
+		<section class="col-md-6">
+			<h2>@Model.TwitterTweets[i].TweetAuthor</h2>
+			<p>@Model.TwitterTweets[i].Tweet</p>
+		</section>
+	</section>
+}

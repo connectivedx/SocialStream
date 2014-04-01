@@ -1,0 +1,28 @@
+﻿@{
+	ViewBag.Title = "Code";
+}
+
+<section class="jumbotron">
+	<h1>Code</h1>
+	<p class="lead">The solution I came up with in .NET.</p>
+</section>
+
+<section class="row">
+	<div class="col-md-12">
+		<h2>What's my solution?</h2>
+		<p>
+			My solution came from how John Leon implemented his social stream for the Delight FTW page, written in a way
+			as to be modular and easily placed into a .NET website.
+		</p>
+		<p>
+			I create a "SocialItem" object in .NET that is a generic
+			social object with the fields I need and that are applicable to all social networks. I then have a service
+			that runs (in this case Sitecore) that makes all the necessary API calls and loads them into a Database as
+			SocialItem's.
+		</p>
+		<p>
+			For the rendering of the page I obtain a collection of SocialItem's and display them however is necessary
+			to the end user.
+		</p>
+	</div>
+</section>

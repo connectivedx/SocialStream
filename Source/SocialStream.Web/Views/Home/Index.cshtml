@@ -1,0 +1,46 @@
+﻿@{
+	ViewBag.Title = "Home";
+}
+
+<section class="jumbotron">
+	<h1>Social Stream</h1>
+	<p class="lead">An overview of what a Social Stream is and how I coped working with multiple RESTful API's.</p>
+</section>
+
+<section class="row">
+	<div class="col-md-12">
+		<h2>What is a Social Stream?</h2>
+		<p>
+			A Social Stream is a service that pulls in all social media related posts and/or pictures and displays them to
+			an end user in a meaningful way. Whether this is a news feed of all social posts across multiple social networks,
+			or a photo stream of pictures and videos from multiple social networks it works the same. Pull in the objects,
+			store them in a database and render them out to a user.
+		</p>
+	</div>
+</section>
+
+<section class="row">
+	<div class="col-md-4">
+		<h2>@Html.ActionLink("APIs", "APIs", "Home")</h2>
+		<p>Most of these suck, but this should save you some time.</p>
+	</div>
+	<div class="col-md-4">
+		<h2>@Html.ActionLink("Postman", "Postman", "Home")</h2>
+		<p>The best solution to working with RESTful APIs.</p>
+	</div>
+	<div class="col-md-4">
+		<h2>@Html.ActionLink("Code", "Code", "Home")</h2>
+		<p>The solution I came up with in .NET.</p>
+	</div>
+</section>
+
+<section class="row">
+	<div class="col-md-4">
+		<h2>@Html.ActionLink("Overview", "Overview", "Home")</h2>
+		<p>An overview of the pros and cons.</p>
+	</div>
+	<div class="col-md-4">
+		<h2>@Html.ActionLink("Stream", "Stream", "Home")</h2>
+		<p>An example of the stream.</p>
+	</div>
+</section>
