@@ -6,7 +6,7 @@ Social Stream is an attempt to create Skynet. If all else fails it will at least
 It's as easy as 0111100101101111011101010111001000100000011011010110111101101101.
 
 1. Clone the repository (I bet some people would actually need me to tell them this /sigh).
-2. Restore the database from the backup file I've included for you in the Dependencies folder incompetent human!
+2. Restore the database from the backup file I've included for you in the Dependencies folder incompetent human! Don't forget to add a sql login and assign it to the database.
 3. Listen to some dub wubs.
 4. Open up the .sln file in Visual Studio and copy Source\SocialStream.Web\App_Config\ConnectionStrings.shared.config to a file named ConnectionStrings.config in the same folder and add your connection string to it.
 5. Check out Source\SocialStream.Data\Agent.cs, this is the main pipeline where you can add your own parsing method and social call to go along with it, use it wisely padawan.
