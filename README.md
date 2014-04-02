@@ -15,10 +15,16 @@ It's as easy as 011100000110100101100101*.
 
 ## Contributing
 Send me Pull Requests when you see fit, I'll review them and merge them in if they are worth their weight in dogecoin.
+
 Wow						Very Skill
+
 		How Code
+
 So Impressive		Do want			Such beautiful
+
 								Wow
+								
 
 * Translate this to text derphead http://www.roubaixinteractive.com/PlayGround/Binary_Conversion/Binary_To_Text.asp
+
 ** Some may think this is optional, it is not, https://www.youtube.com/watch?v=ENjxq0oQCFc
