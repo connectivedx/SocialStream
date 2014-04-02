@@ -6,7 +6,7 @@ namespace SocialStream.Data.Objects
 	{
 		// From the DB (hence the guid)
 		public SocialItem(Guid id, string socialNetwork, string url, string tweet, string tweetAuthor, string tweetScreenName,
-			string thumbnail, DateTime timestamp, bool hide, bool ourPick)
+			string thumbnail, DateTime timestamp, bool hide, bool pick)
 		{
 			Id = id;
 			SocialNetwork = socialNetwork;
@@ -17,7 +17,7 @@ namespace SocialStream.Data.Objects
 			Thumbnail = thumbnail;
 			Timestamp = timestamp;
 			Hide = hide;
-			OurPick = ourPick;
+			Pick = pick;
 		}
 
 		// Goes into the DB (hence the lack of a guid)
@@ -42,6 +42,6 @@ namespace SocialStream.Data.Objects
 		public string Thumbnail { get; set; }
 		public DateTime Timestamp { get; set; }
 		public bool Hide { get; set; }
-		public bool OurPick { get; set; }
+		public bool Pick { get; set; }
 	}
 }

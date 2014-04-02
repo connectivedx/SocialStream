@@ -45,7 +45,7 @@ namespace SocialStream.Data.Repositories
 		{
 			return new List<SocialItem>(
 				Sql.ExecuteReader(@"
-						SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, OurPick
+						SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, Pick
 						FROM SocialData
 						ORDER BY Timestamp DESC",
 					"socialstream",
@@ -57,7 +57,7 @@ namespace SocialStream.Data.Repositories
 		{
 			return new List<SocialItem>(
 				Sql.ExecuteReader(@"
-					SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, OurPick
+					SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, Pick
 					FROM SocialData
 					WHERE SocialNetwork = @SocialNetwork
 					ORDER BY Timestamp DESC",
@@ -75,10 +75,10 @@ namespace SocialStream.Data.Repositories
 			string socialList = string.Join(", ", formattedSocialNetworks);
 
 			string query = string.Format(@"
-						SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, OurPick
+						SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, Pick
 						FROM SocialData
 						WHERE Hide = 0
-						AND OurPick = 0
+						AND Pick = 0
 						AND SocialNetwork IN ({0})
 						ORDER BY Timestamp DESC", socialList);
 
@@ -96,10 +96,10 @@ namespace SocialStream.Data.Repositories
 			string socialList = string.Join(", ", formattedSocialNetworks);
 
 			string query = string.Format(@"
-						SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, OurPick
+						SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, Pick
 						FROM SocialData
 						WHERE Hide = 0
-						AND OurPick = 0
+						AND Pick = 0
 						AND SocialNetwork IN ({0})
 						AND Timestamp <= ('{1}')
 						ORDER BY Timestamp DESC", socialList, startDateTime);
@@ -142,10 +142,10 @@ namespace SocialStream.Data.Repositories
 		{
 			Sql.ExecuteNonQuery(@"
 					UPDATE SocialData
-					SET OurPick = 0
+					SET Pick = 0
 
 					UPDATE SocialData
-					SET OurPick = 1
+					SET Pick = 1
 					WHERE ID = @Id",
 				"socialstream",
 				new[]
@@ -158,7 +158,7 @@ namespace SocialStream.Data.Repositories
 		{
 			Sql.ExecuteNonQuery(@"
 					UPDATE SocialData
-					SET OurPick = 0
+					SET Pick = 0
 					WHERE ID = @Id",
 				"socialstream",
 				new[]
@@ -170,9 +170,9 @@ namespace SocialStream.Data.Repositories
 		public SocialItem GetPick()
 		{
 			return Sql.ExecuteReader(@"
-					SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, OurPick
+					SELECT ID, SocialNetwork, Url, COALESCE(Tweet, '') AS Tweet, TweetAuthor, TweetScreenName, Thumbnail, Timestamp, Hide, Pick
 					FROM SocialData
-					WHERE OurPick = 1",
+					WHERE Pick = 1",
 				"socialstream",
 				null,
 				SocialLoader.Load).FirstOrDefault();
