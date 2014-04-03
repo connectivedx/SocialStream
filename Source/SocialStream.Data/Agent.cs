@@ -62,7 +62,7 @@ namespace SocialStream.Data
 					const string facebookUrl =
 						"";
 					string facebook = CallSocial(facebookUrl);
-					StoreSocial(facebook, ParseFacebook);
+					StoreSocial(facebook, ParseAllFacebookAlbumPhotos);
 					break;
 				case "youtube":
 					const string youtubeUrl = "";
@@ -377,11 +377,11 @@ namespace SocialStream.Data
 		}
 
 		/// <summary>
-		///     Parses the Facebook feed using a dynamic object
+		///     Parses all Facebook albums for a given account and stores all photos in each album.
 		/// </summary>
 		/// <param name="facebookAlbums">The dynamic object to be parsed</param>
 		/// <returns>A List of Social Items for each picture</returns>
-		private List<SocialItem> ParseFacebook(dynamic facebookAlbums)
+		private List<SocialItem> ParseAllFacebookAlbumPhotos(dynamic facebookAlbums)
 		{
 			var facebookItems = new List<SocialItem>();
 
